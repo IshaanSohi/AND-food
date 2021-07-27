@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    header {
+        display: flex;
+        height: fit-content;
+        border: 1px solid silver;
+        align-items: center;
+
+    }
+
+    #it1 {
+        display: flex;
+        flex-direction: row;
+        -ms-flex-align: start;
+    }
+
+    #it2 {
+        margin-left: auto;
+        margin-right: 2%;
+
+    }
+
+    .it img {
+        height: 9vh;
+    }
+
+    #it2 a {
+
+        text-decoration: none;
+        color: black;
+    }
+
+    .navbar ul {
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    @media (max-width: 370px) {
+        .navbar {
+            flex-direction: column;
+        }
+    }
+
+    .navbar div {
+        padding: 2vh 2vw 3vh 2vw;
+        margin-bottom: 1%;
+    }
+
+    .navbar div:hover {
+        background-color: rgb(245, 245, 255);
+        border: 1px solid rgb(215, 215, 223);
+        border-radius: 4px;
+    }
+
+    footer {
+        background-color: #f2f2f2;
+        height: fit-content;
+        padding: 2vw;
+    }
+
+    .foo1 ul {
+        line-height: 5vh;
+    }
+
+    .foo1 ul li {
+
+        list-style-type: none;
+        display: inline;
+    }
+
+    .foo1 {
+        margin-left: 5vw;
+        display: inline-block;
+        /* border: 2px solid red;*/
+        height: fit-content;
+        width: fit-content;
+        padding: 3vh;
+
+    }
+
+    .foo1 ul li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .foo2 {
+        position: absolute;
+        left: 35vw;
+        display: inline-block;
+        /* border: 2px solid red; */
+        height: fit-content;
+        width: fit-content;
+        padding: 3vh;
+    }
+
+    .foo2 img {
+        height: 7vh;
+        margin-left: 1vw;
+    }
+
+    .foo3 ul {
+        text-align: center;
+    }
+
+    .foo3 ul li {
+        display: inline;
+    }
+
+    .head1 {
+        text-align: center;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: gray;
+        justify-content: space-evenly;
+    }
+
+    .box1 {
+        width: 20vw;
+        background-color: yellow;
+        /* min-height: 50vh; */
+        padding: 3vh;
+        overflow: hidden;
+    }
+
+    .img1 {
+        object-fit: cover;
+        transition: transform 2s;
+    }
+
+    .img1:hover {
+        transform: scale(1.2);
+
+    }
+
+    .img2 {
+        object-fit: cover;
+        transition: transform 2s;
+    }
+
+    .img2:hover {
+        transform: scale(1.2);
+
+    }
+
+    .box2 {
+        width: 20vw;
+        background-color: yellow;
+        /* min-height: 50vh; */
+        padding: 3vh;
+        overflow: hidden;
+    }
+
+    .box3 {
+        width: 20vw;
+        background-color: yellow;
+        /* min-height: 50vh; */
+        overflow: hidden;
+        padding: 3vh;
+    }
+
+    .img3 {
+        object-fit: cover;
+        transition: transform 2s;
+    }
+
+    .img3:hover {
+        transform: scale(1.2);
+
+    }
+
+    .txt1 {
+        font-size: x-large;
+        text-align: center;
+       font-weight: bold;
+    }
+
+    .txt2 {
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    .txt3 {
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    .main2 {
+        background-color: seashell;
+    }
+
+    .ni {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+    }
+
+    #nihead {
+        text-align: center;
+        font-size: 10vh;
+    }
+
+    .imgni {
+        width: 25vw;
+        background-color: skyblue;
+        padding: 4vh;
+    }
+
+    .txtni {
+        width: 50vw;
+        background-color: skyblue;
+        font-size: larger;
+    }
+
+    #foodhd {
+        background-image: url(https://c.pxhere.com/photos/fc/76/red_chili_peppers_dried_spicy_foods_fruits_edible-954318.jpg!d);
+        background-repeat: no-repeat;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        font-size: xxx-large;
+        color: firebrick;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+
+
+    .txtsi {
+        background-image: url(https://d1oh9y2nmj4y5b.cloudfront.net/uploads/photo/filename/7580/Authentic_South_Indian_Meal_Served_for_guests.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: xxx-large;
+        color: cadetblue;
+    }
+
+    #headsi {
+        text-align: center;
+        font-size: 10vh;
+    }
+
+    .seaf {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+    }
+
+    .imgseaf {
+        width: 25vw;
+        background-color: skyblue;
+        padding: 4vh;
+    }
+
+    .txtseaf {
+        width: 50vw;
+        background-color: skyblue;
+        font-size: larger;
+    }
+
+    #seafhead {
+        text-align: center;
+        font-size: 10vh;
+    }
+    #tfhead {
+        text-align: center;
+        font-size: 10vh;
+    }
+    .imgtf {
+        width: 25vw;
+        background-color: skyblue;
+        padding: 4vh;
+    }
+    .txttf {
+        width: 50vw;
+        background-color: skyblue;
+        font-size: larger;
+    }
+    .tf {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+    }
+</style>
+
+<body>
+
+
+    <header>
+        <div class="it" id="it1"><img src="logo.png" alt=""></div>
+        <div class="it" id="it2"><a href="">Join Us</a></div>
+        <div class="it" id="it3"> <img src="dropdown icon.png" alt=""></div>
+
+    </header>
+    <br>
+    <div class="navbar">
+        <div>Home</div>
+        <div class="Neil">Places to Visit</div>
+        <div>Food</div>
+        <div>Hotels</div>
+        <div>How to Reach</div>
+        <div>Activities</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="head1">
+        <h1 id="foodhd">Food</h1>
+    </div>
+    <div class="main">
+        <div class="box1">
+            <div class="txt1">Indian</div>
+            <div class="img1"><a href="#ind">
+                    <img src="https://curlytales.com/wp-content/uploads/2019/08/5111_b00be9ae6434477cb565e24fc1c03ca3-1024x819.jpg"
+                        width="100%" alt=""></a></div>
+        </div>
+        <div class="box2">
+            <div class="txt2">Seafood</div>
+            <div class="img2"><a href="#seafhead">
+                    <img src="https://seawestnews.com/wp-content/uploads/2018/02/478663945-e1589735067872.jpg"
+                        width="100%" alt=""></div></a>
+        </div>
+        <div class="box3">
+            <div class="txt3">Traditional</div>
+            <div class="img3"><a href="#tfhead">
+                <img src="http://previews.123rf.com/images/cokemomo/cokemomo1507/cokemomo150700082/43624576-meals-served-on-banana-leaf-traditional-south-indian-cuisine-Stock-Photo.jpg"
+                    width="100%" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="main2">
+        <h1 id="ind">Indian Food</h1>
+        <div class="introind">Staple foods of Indian cuisine include pearl millet (bājra), rice, whole-wheat flour
+            (aṭṭa), and a variety of lentils, such as masoor (most often red lentils), tuer (pigeon peas), urad (black
+            gram), and moong (mung beans). Lentils may be used whole, dehusked—for example, dhuli moong or dhuli urad—or
+            split. Split lentils, or dal, are used extensively.[29] Some pulses, such as channa or cholae (chickpeas),
+            rajma (kidney beans), and lobiya (black-eyed peas) are very common, especially in the northern regions.
+            Channa and moong are also processed into flour (besan).
+
+            Many Indian dishes are cooked in vegetable oil, but peanut oil is popular in northern and western India,
+            mustard oil in eastern India,[25] and coconut oil along the western coast, especially in Kerala and parts of
+            southern Tamil Nadu.[30][self-published source?] Gingelly (sesame) oil is common in the south since it
+            imparts a fragrant, nutty aroma.[31]</div>
+        <p>It is majorly of two types
+        </p>
+        <p> 1.<a href="#nihead">North Indian</a></p>
+        <p>2.<a href="#headsi">South Indian</a></p>
+
+        <h1 id="nihead">North Indian</h1>
+        <div class="ni">
+            <div class="imgni"><img src="https://i.pinimg.com/474x/02/5e/eb/025eeb52a26e22151b9440695d1025e9.jpg"
+                    width="100%" alt=""></div>
+            <div class="txtni">North Indian cuisine is distinguished by the proportionally high use of dairy products;
+                milk,
+                paneer, ghee (clarified butter), and yoghurt (yogurt, yoghourt) are all common ingredients. Gravies are
+                typically dairy-based. Other common ingredients include chilies, saffron, and nuts. The Mughal influence
+                has
+                resulted in meat-eating habits among many North Indians. Also, a variety of flours are used to make
+                different types of breads like chapathis. rotis, phulkas, puris and naan.
+                North Indian cooking features the use of the "tawa" (griddle) for baking flat breads like roti and
+                paratha, and "tandoor" (a large and cylindrical charcoal-fired oven) for baking breads such as naan, and
+                kulcha; main courses like tandoori chicken also cook in the tandoor. Other breads like puri and
+                bhatoora, which are deep fried in oil, are also common. Goat and lamb meats are favored ingredients of
+                many northern Indian recipes.
+
+                The samosa is a popular North Indian snack, and now commonly found in other parts of India, Central
+                Asia, North America, Britain and the Middle East. A common variety is filled with boiled, fried, or
+                mashed potato. Other fillings include minced meat, cheese (paneer), mushroom (khumbi), and chick pea.
+                The staple food of most of North India is a variety of lentils, vegetables, and roti (wheat based
+                bread). The varieties used and the method of preparation can vary from place to place. Popular snacks,
+                side-dishes and drinks include mirchi bada, buknu, bhujiya, chaat, kachori, imarti, several types of
+                pickles (known as achar), murabba, sharbat, aam panna and aam papad. Popular sweets are known as mithai
+                (means sweetmeat in Hindi), such as gulab jamun, jalebi, peda, petha, rewadi, gajak, bal mithai,
+                singori, kulfi, falooda, khaja, ras malai, gulkand, and several varieties of laddu, barfi and halwa.
+
+
+            </div>
+        </div>
+        <h1 id="headsi">South Indian</h1>
+        <div class="si">
+            <!-- <div class="imgsi"><img src="https://d1oh9y2nmj4y5b.cloudfront.net/uploads/photo/filename/7580/Authentic_South_Indian_Meal_Served_for_guests.jpg" width="100%" alt=""></div> -->
+            <div class="txtsi">South Indian cuisine includes the cuisines of the five southern states of India—Andhra
+                Pradesh, Karnataka, Kerala, Tamil Nadu and Telangana—and the union territories of Lakshadweep,
+                Pondicherry, and the Andaman and Nicobar Islands.There are typically vegetarian and non-vegetarian
+                dishes for all five states. Additionally, all regions have typical main dishes, snacks, light meals,
+                desserts, and drinks that are well known in their respective region.
+                South Indian cuisine includes the cuisines of the five southern states of India—Andhra Pradesh,
+                Karnataka, Kerala, Tamil Nadu and Telangana—and the union territories of Lakshadweep, Pondicherry, and
+                the Andaman and Nicobar Islands.There are typically vegetarian and non-vegetarian dishes for all five
+                states. Additionally, all regions have typical main dishes, snacks, light meals, desserts, and drinks
+                that are well known in their respective region.
+                The similarities[citation needed] among the five states' cuisines include the presence of rice as a
+                staple food, the use of lentils and spices, dried red chilies and fresh green chilies, coconut, and
+                native fruits and vegetables including tamarind, plantain, snake gourd, garlic, and ginger. The four
+                cuisines have much[citation needed] in common and differ primarily[citation needed] in the spiciness of
+                the food.From Kerala comes Malabari cooking, with its repertoire of tasty seafood dishes. Hyderabad is
+                the home of the Nizams (rulers of Hyderabad) and ranges from spicy to sour to sweet. Hyderabadi food is
+                full of nuts, dried fruits and exotic, expensive spices like saffron.
+
+                Kerala, Tamil Nadu, south and coastal Karnataka and most parts of Andhra Pradesh use more rice[citation
+                needed]. People also consume ragi, or finger millet, in large quantities in southern Karnataka. North
+                Karnataka, on the other hand, consumes more bajra (pearl millet) and sorghum[citation needed], while the
+                Telangana state uses more jowar and pearl millet.
+            </div>
+        </div>
+        <h1 id="seafhead">Sea Food</h1>
+        <div class="seaf">
+
+            <div class="txtseaf">Seafood is any form of sea life regarded as food by humans, prominently including fish
+                and shellfish. Shellfish include various species of molluscs (e.g. bivalve molluscs such as clams,
+                oysters, and mussels and cephalopods such as octopus and squid), crustaceans (e.g. shrimp, crabs, and
+                lobster), and echinoderms (e.g. sea cucumbers and sea urchins). Historically, marine mammals such as
+                cetaceans (whales and dolphins) as well as seals have been eaten as food, though that happens to a
+                lesser extent in modern times. Edible sea plants such as some seaweeds and microalgae are widely eaten
+                as sea vegetables around the world, especially in Asia. In the United States, although not generally in
+                the United Kingdom, the term "seafood" is extended to fresh water organisms eaten by humans, so all
+                edible aquatic life may be referred to as "seafood".[citation needed]
+
+                The harvesting of wild seafood is usually known as fishing or hunting, while the cultivation and farming
+                of seafood is known as aquaculture or fish farming (in the case of fish). Seafood is often colloquially
+                distinguished from meat; vegetarians who consume seafood as the only source of meat are said to adhere
+                to pescetarianism. Seafood is an important source of (animal) protein in many diets around the world,
+                especially in coastal areas
+
+
+            </div>
+            <div class="imgseaf"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Plateau_van_zeevruchten.jpg/450px-Plateau_van_zeevruchten.jpg"
+                    width="100%" alt=""></div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <h1 id="tfhead">Traditional Food</h1>
+        <div class="tf">
+            <div class="imgtf"><img src="https://www.swantour.com/blogs/wp-content/uploads/2019/06/Barbeque-Food.jpg"
+                    width="100%" alt=""></div>
+            <div class="txttf">Andaman & Nicobar Islands is a fusion of Indian Culture. This is even reflected in the
+                food & Cuisine of the local peoples of these Islands.
+
+                The finest of India’s cuisines is as rich as well as diverse as its civilization. It is an art kind that
+                has been passed on through generations purely by word of mouth, from guru (teacher) to vidhyarthi
+                (pupil) or from mother to daughter.
+
+                Andaman cuisine is heavily influenced by all the cultures that came into contact with the region. Like
+                many other aspects of Andaman culture, the influence of the Hindu, Christian, Muslim and also Sikh
+                religions in the traditional food is extremely strong. You can observe this deep impact on the truly
+                tasty and spicy Food of Andamans. Food in Andaman & Nicobar Islands has roots in the history, geography
+                and also culture of the land.
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div class="foo1">
+                <ul>
+                    <p>HEADING</p><br><br>
+                    <li><a href="#">HOME</a></li><br>
+                    <li><a href="#">ABOUT</a></li><br>
+                    <li><a href="#">CAREER</a></li><br>
+                    <li><a href="#">WORK WITH US</a></li><br>
+                    <li><a href="#">CONTACT</a></li><br>
+                </ul>
+            </div>
+            <div class="foo2">
+                <ul>
+                    <p>Follow us on </p><br><br>
+                    <a href=""><img
+                            src="https://misstourist.com/wp-content/themes/mts_child/assets/svg/source/social-facebook.svg"
+                            alt=""></a>
+                    <a href=""><img
+                            src="https://misstourist.com/wp-content/themes/mts_child/assets/svg/source/social-instagram-color.svg"
+                            alt=""></a>
+                    <a href=""> <img
+                            src="https://misstourist.com/wp-content/themes/mts_child/assets/svg/source/social-twitter-color.svg"
+                            alt=""></a>
+                </ul>
+            </div>
+
+            <div class="foo3">
+                <ul>
+                    <li>Copyright 2020-2024 |</li>
+                    <li>All right reserved |</li>
+                    <li>Terms and Conditions |</li>
+                    <li>Privacy policy</li>
+                </ul>
+            </div>
+</body>
+
+</html>
